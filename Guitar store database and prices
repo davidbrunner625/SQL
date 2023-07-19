@@ -1,0 +1,36 @@
+--Create a store database
+
+CREATE TABLE guitars (id INTEGER PRIMARY KEY, brand TEXT, name TEXT, price INTEGER);
+
+INSERT INTO guitars VALUES (1, "Les Paul", "Gibson", 799);
+INSERT INTO guitars VALUES (2, "Stratocaster", "Fender",699);
+INSERT INTO guitars VALUES (3, "Telecaster", "Fender",399);
+INSERT INTO guitars VALUES (4, "Ibanez", "ibanez",1299);
+INSERT INTO guitars VALUES (5, "Rele", "bilt",299);
+INSERT INTO guitars VALUES (6, "Squier", "Fender",199);
+INSERT INTO guitars VALUES (7, "Epiphone", "Gibson",999);
+INSERT INTO guitars VALUES (8, "Jazzmaster", "Fender",1599);
+INSERT INTO guitars VALUES (9, "es335", "Gibson",2099);
+INSERT INTO guitars VALUES (10, "jaguar", "Fender",3099);
+INSERT INTO guitars VALUES (11, "mustang", "Fender",2499);
+INSERT INTO guitars VALUES (12, "starcaster", "Fender",2299);
+INSERT INTO guitars VALUES (13, "bronco bass", "Fender",1799);
+INSERT INTO guitars VALUES (14, "jbass", "Fender",3099);
+INSERT INTO guitars VALUES (15, "pbass", "Fender",899);
+
+--Display items less than 1099
+
+SELECT * FROM guitars WHERE price < 1099 ;s
+
+--Display the average price of Fender guitars
+
+SELECT AVG(price) "avg name item price"
+FROM guitars
+where name="Fender";
+
+--Display the top 5 most expensive guitars
+
+SELECT brand, price
+FROM guitars
+order by price desc
+limit 5;
